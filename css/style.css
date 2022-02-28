@@ -2,7 +2,7 @@ body {
     font-family: 'Oswald', sans-serif;
 }
 
-#show-phone-details {
+#show-phone {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     row-gap: 30px;
@@ -10,19 +10,28 @@ body {
 
  /* X-Small devices (portrait phones, less than 576px) */
 @media (max-width: 576px) {
-    .card-img-top {
-        
-    }
-}
-
-/* Small devices (landscape phones, less than 768px) */
-@media (max-width: 768px) {
-    #show-phone-details {
-        display: grid;
-        grid-template-columns: repeat(1, 1fr);
-        row-gap: 15px;
-    } 
+  
 }
 
  /* Medium devices (tablets, less than 992px) */
-@media (max-width: 992px) {  }
+@media (max-width: 992px) {
+    #show-phone {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        row-gap: 15px;
+    }
+    .phone-details {
+        margin-bottom: 30px;
+    }
+}
+/* Large devices (desktops, less than 1200px) */
+@media (max-width: 1200px) {
+    #show-phone {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        row-gap: 15px;
+    }
+    .phone-details {
+        margin-bottom: 30px;
+    }
+}
