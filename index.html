@@ -16,7 +16,14 @@
 </head>
 <body>
     <div class="container">
-        <h1 class="text-center pt-5 text-success">Phone Store</h1>
+        <h1 class="text-center pt-3 text-success">Phone Store</h1>
+        <div class="d-flex w-75 m-auto pb-5">
+            <input id="search-input" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button onclick="loadPhone()" id="search-btn" class="btn btn-outline-success" type="submit">Search</button>
+        </div>
+        <div id="show-phone-details" class="row">
+           
+        </div>
     </div>
 
     <!-- Custom JS -->
