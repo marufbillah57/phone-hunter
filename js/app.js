@@ -1,31 +1,63 @@
+// Error Message
+const clearData = phoneId => {
+    document.getElementById(phoneId).textContent = '';
+}
+// get Search Input value
+const searchInputValue = searchInput => {
+  return   document.getElementById(searchInput);
+}
 
-
+// load phone data
 const loadPhone = () => {
-    const searchInput = document.getElementById('search-input');
+    // document.getElementById('error-msg-1').textContent = '';
+    // document.getElementById('phone-details').textContent = '';
+    clearData('error-msg-1');
+    clearData('show-phone');
+    clearData('phone-details');
+    const searchInput = searchInputValue('search-input');
     const searchValue = searchInput.value;
     // clear input value
     searchInput.value = '';
-    const url = `https://openapi.programming-hero.com/api/phones?search=${searchValue}`;
-    fetch(url)
-        .then(response => response.json())
-        .then(data => displayShowPhone(data.data));
+
+    // const url = `https://openapi.programming-hero.com/api/phones?search=${searchValue}`;
+    // fetch(url)
+    //     .then(response => response.json())
+    //     .then(data => displayShowPhone(data.data));
+
+    // error message
+    let errorMessage = document.getElementById('error-msg-1');
+    if(searchValue == '' || !isNaN(searchValue)) {
+        errorMessage.innerText = 'Please enter a phone name';
+        searchInput.value = '';
+        
+    }
+    else {
+        const url = `https://openapi.programming-hero.com/api/phones?search=${searchValue}`;
+        fetch(url)
+            .then(response => response.json())
+            .then(data => displayShowPhone(data.data));
+    }
+        
 };
 
+let searchInput = document.getElementById('search-input').value;
 // Phone show in display
 const displayShowPhone = phones => {
     const first20Phone = phones.slice(0, 20);
-    console.log(first20Phone)
     const containerShowPhone = document.getElementById('show-phone');
     // clear data
     containerShowPhone.textContent = '';
 
-    // error message
-    const errorMessage = document.getElementById('error');
-    if(phones == '' || isNaN(phones) || !phones){
-        errorMessage.style.display = 'block';
-    }
+   const errorMessage1 = document.getElementById('error-msg-1');
+   const errorMessage2 = document.getElementById('error-msg-2');
+   if(!phones || searchInput == '') {
+       errorMessage2.innerText = 'Phone no found';
+   } else if(isNaN(phones)){
+       errorMessage1.innerText = 'Please enter a phone name';
+   }
     first20Phone.forEach(phone => {
-        errorMessage.style.display = 'none';
+        document.getElementById('error-msg-1').style.display = 'none';
+        document.getElementById('error-msg-2').style.display = 'none';
         const div = document.createElement('div');
         div.classList.add('col');
         div.innerHTML = `
@@ -43,7 +75,7 @@ const displayShowPhone = phones => {
     });
 };
 
-// Phone details load
+// Phone details  load
 const loadPhoneDetail = id => {
     const url = `https://openapi.programming-hero.com/api/phone/${id}`;
     fetch(url)
@@ -53,8 +85,6 @@ const loadPhoneDetail = id => {
 
 // Display show phone details
 const showPhoneDetails = phone => {
-
-    toggleDisplayPhone('none');
     const phoneDetails = document.getElementById('phone-details');
     phoneDetails.textContent = '';
     const div = document.createElement('div');
@@ -75,12 +105,7 @@ const showPhoneDetails = phone => {
     phoneDetails.appendChild(div);
 }
 
-// display single phone details
-const toggleDisplayPhone = displayStyle => {
-    document.getElementById('show-phone').style.display = displayStyle;
-}
 
-// display data clear
-const toggleDisplayPhoneDetails = displayStyle => {
-    document.getElementById('phone-details').style.display = displayStyle;
-}
+
+
+
