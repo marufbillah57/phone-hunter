@@ -8,6 +8,13 @@ body {
     row-gap: 30px;
 }
 
+#spinner {
+    display: none;
+}
+#error {
+    display: none;
+}
+
  /* X-Small devices (portrait phones, less than 576px) */
 @media (max-width: 576px) {
   
