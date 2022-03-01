@@ -1,12 +1,15 @@
 body {
     font-family: 'Oswald', sans-serif;
 }
+p{
+    font-weight: 400px;
+}
 
-#show-phone {
+/* #show-phone {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     row-gap: 30px;
-}
+} */
 
 #spinner {
     display: none;
@@ -16,29 +19,7 @@ body {
 } */
 
  /* X-Small devices (portrait phones, less than 576px) */
-@media (max-width: 576px) {
+/* @media (max-width: 576px) {
   
 }
 
- /* Medium devices (tablets, less than 992px) */
-@media (max-width: 992px) {
-    #show-phone {
-        display: grid;
-        grid-template-columns: repeat(1, 1fr);
-        row-gap: 15px;
-    }
-    .phone-details {
-        margin-bottom: 30px;
-    }
-}
-/* Large devices (desktops, less than 1200px) */
-@media (max-width: 1200px) {
-    #show-phone {
-        display: grid;
-        grid-template-columns: repeat(1, 1fr);
-        row-gap: 15px;
-    }
-    .phone-details {
-        margin-bottom: 30px;
-    }
-}
