@@ -1,25 +1,7 @@
 body {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
-p{
-    font-weight: 400px;
+.font-size {
+    font-size: 16px;
+    font-weight: 600;
 }
-
-/* #show-phone {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    row-gap: 30px;
-} */
-
-#spinner {
-    display: none;
-}
-/* #error-msg-1, #error-msg-2 {
-    display: none;
-} */
-
- /* X-Small devices (portrait phones, less than 576px) */
-/* @media (max-width: 576px) {
-  
-}
-
