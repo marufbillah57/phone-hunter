@@ -64,7 +64,7 @@ const showPhoneDetails = phone => {
     const phoneDetails = document.getElementById('phone-details');
     phoneDetails.textContent = '';
     const div = document.createElement('div');
-    div.className = 'col-sm-6 col-md-4';
+    div.className = 'col-sm-6 col-md-6';
     div.innerHTML = `
         <div class="card p-3 rounded-3 border-success mb-5 mb-md-5 sm-w-50">
             <img  src="${phone.image}" class=" img-fluid m-auto" alt="...">
